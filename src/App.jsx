@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./App.css";
 
 const INSTAGRAM_URL = "https://www.instagram.com/zhricutz_._x/";
-const WHATSAPP_URL = "https://wa.me/917397503577";
 
 const portfolio = [
   {
@@ -70,12 +69,6 @@ function App() {
           item.type.toLowerCase().includes(activeFilter.toLowerCase())
         );
 
-  const whatsappMessage = encodeURIComponent(
-    "Hi ZHRICUTZ STUDIO! I'm interested in your video editing services. Can you share the details?"
-  );
-
-  const contactLink = `${WHATSAPP_URL}?text=${whatsappMessage}`;
-
   return (
     <div className="app">
       {/* NAVBAR */}
@@ -101,22 +94,26 @@ function App() {
           <a href="#home" onClick={() => setMenuOpen(false)}>
             Home
           </a>
+
           <a href="#services" onClick={() => setMenuOpen(false)}>
             Services
           </a>
+
           <a href="#work" onClick={() => setMenuOpen(false)}>
             Our Work
           </a>
+
           <a href="#contact" onClick={() => setMenuOpen(false)}>
             Contact
           </a>
+
           <a
             className="nav-cta"
-            href={contactLink}
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
           >
-            Let's Talk <span>↗</span>
+            Instagram <span>↗</span>
           </a>
         </nav>
       </header>
@@ -146,13 +143,14 @@ function App() {
               <a className="button button-primary" href="#work">
                 Explore Our Work <span>↗</span>
               </a>
+
               <a
                 className="button button-secondary"
-                href={contactLink}
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                Start a Project
+                Visit Instagram
               </a>
             </div>
 
@@ -170,6 +168,7 @@ function App() {
 
             <div className="visual-card visual-card-back">
               <span className="visual-card-label">FRAME 02</span>
+
               <div className="visual-lines">
                 <span />
                 <span />
@@ -235,6 +234,7 @@ function App() {
                 <span className="status-dot" />
                 WHAT WE DO
               </div>
+
               <h2>
                 CREATIVITY IN
                 <br />
@@ -267,6 +267,7 @@ function App() {
                 </div>
 
                 <h3>{service.title}</h3>
+
                 <p>{service.description}</p>
 
                 <div className="service-tag">{service.tag}</div>
@@ -283,6 +284,7 @@ function App() {
                 <span className="status-dot" />
                 SELECTED PROJECTS
               </div>
+
               <h2>
                 EXPLORE OUR
                 <br />
@@ -357,6 +359,7 @@ function App() {
                     <h3>{item.title}</h3>
                     <p>{item.type}</p>
                   </div>
+
                   <span className="portfolio-arrow">↗</span>
                 </div>
               </a>
@@ -368,7 +371,7 @@ function App() {
           </p>
         </section>
 
-        {/* CTA SECTION */}
+        {/* CONTACT SECTION */}
         <section className="cta-section section-padding" id="contact">
           <div className="cta-decoration cta-decoration-one" />
           <div className="cta-decoration cta-decoration-two" />
@@ -386,26 +389,17 @@ function App() {
 
           <p>
             Got an idea for your next reel? Let's bring your vision to life.
-            Tell us what you have in mind.
+            Connect with us on Instagram and share your ideas.
           </p>
 
           <div className="cta-actions">
             <a
               className="button button-primary"
-              href={contactLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Chat on WhatsApp <span>↗</span>
-            </a>
-
-            <a
-              className="button button-secondary"
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer"
             >
-              Follow on Instagram
+              Connect on Instagram <span>↗</span>
             </a>
           </div>
         </section>
@@ -415,6 +409,7 @@ function App() {
       <footer className="footer">
         <a className="brand footer-brand" href="#home">
           <span className="brand-mark">Z.</span>
+
           <span className="brand-name">
             ZHRICUTZ <span>STUDIO</span>
           </span>
@@ -431,14 +426,6 @@ function App() {
           >
             Instagram ↗
           </a>
-          <a
-            href={contactLink}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="WhatsApp"
-          >
-            WhatsApp ↗
-          </a>
         </div>
 
         <div className="footer-bottom">
@@ -446,26 +433,6 @@ function App() {
           <a href="#home">BACK TO TOP ↑</a>
         </div>
       </footer>
-
-      {/* FLOATING WHATSAPP BUTTON */}
-      <a
-        className="floating-whatsapp"
-        href={contactLink}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Contact ZHRICUTZ Studio on WhatsApp"
-        title="Chat on WhatsApp"
-      >
-        <svg
-          viewBox="0 0 32 32"
-          width="25"
-          height="25"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path d="M16 .8A15.1 15.1 0 0 0 3.05 23.66L1 31l7.52-1.97A15.2 15.2 0 1 0 16 .8Zm0 27.6c-2.3 0-4.55-.62-6.5-1.8l-.47-.28-4.46 1.17 1.19-4.35-.3-.48A12.47 12.47 0 1 1 16 28.4Zm6.85-9.34c-.38-.19-2.22-1.1-2.56-1.23-.35-.13-.6-.19-.85.19-.26.38-.98 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.59-3.05-1.88-1.13-1.01-1.89-2.26-2.1-2.64-.22-.38-.03-.58.16-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.04-1.16-2.79-.3-.73-.62-.63-.85-.64h-.72c-.25 0-.66.1-1.01.48-.35.38-1.33 1.3-1.33 3.17s1.36 3.68 1.55 3.93c.19.25 2.68 4.09 6.49 5.74.91.39 1.62.62 2.17.8.91.29 1.74.25 2.39.15.73-.11 2.22-.91 2.53-1.79.32-.89.32-1.65.22-1.81-.1-.16-.35-.25-.73-.44Z" />
-        </svg>
-      </a>
     </div>
   );
 }
